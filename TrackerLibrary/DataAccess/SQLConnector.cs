@@ -8,6 +8,11 @@ namespace TrackerLibrary
 {
     public class SQLConnector : IDataConnection
     {
+        public PersonModel CreatePerson(PersonModel model)
+        {
+            throw new NotImplementedException();
+        }
+
         // TODO - make create prize method save to DB
         /// <summary>
         /// saves a new prize to the database

@@ -11,6 +11,13 @@ namespace TrackerLibrary
     public class TextConnector : IDataConnection
     {
         private const string PrizesFile = "PrizeModels.csv";
+        private const string PeopleFile = "PersonModel.csv";
+
+        public PersonModel CreatePerson(PersonModel model)
+        {
+            List<PersonModel> person = PeopleFile.FullFilePath().LoadFile().ConvertToPeopleModel;
+        }
+
         public PrizeModel CreatePrize(PrizeModel model)
         {    
             // Load text file
@@ -31,5 +38,7 @@ namespace TrackerLibrary
 
             return model;
         }
+
+
     }
 }

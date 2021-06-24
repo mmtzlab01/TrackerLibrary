@@ -47,6 +47,23 @@ namespace TrackerLibrary.DataAccess.TextConnector
 
             return output;
         }
+        public static List<PersonModel> ConvertToPeopleModel(this List<string> lines)
+        {
+            List<PersonModel> output = new List<PersonModel>();
+
+            foreach (string line in lines)
+            {
+                string[] cols = line.Split(',');
+                PersonModel p = new PersonModel();
+                p.Id = int.Parse(cols[0]);
+                p.FirstName = cols[1];
+                p.LastName = cols[2];
+                p.EmailAddress = cols[3];
+                p.EmailAddress = cols[4];
+                output.Add(p);
+            }
+            return output;
+        }
 
         public static void SaveToPrizeModel(this List<PrizeModel> models, string filename)
         {

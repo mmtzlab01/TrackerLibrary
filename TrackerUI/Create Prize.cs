@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TrackerLibrary;
 
@@ -59,7 +52,7 @@ namespace TrackerUI
             {
                 output = false;
             }
-            if (placeNumber<1)
+            if (placeNumber < 1)
             {
                 output = false;
             }
@@ -80,7 +73,7 @@ namespace TrackerUI
             {
                 output = false;
             }
-            if (prizePercentage <0 || prizePercentage > 100)
+            if (prizePercentage < 0 || prizePercentage > 100)
             {
                 output = false;
             }
