@@ -15,7 +15,16 @@ namespace TrackerLibrary
 
         public PersonModel CreatePerson(PersonModel model)
         {
-            List<PersonModel> person = PeopleFile.FullFilePath().LoadFile().ConvertToPeopleModel;
+            List<PersonModel> people = PeopleFile.FullFilePath().LoadFile().ConvertToPeopleModel();
+            int currentID = 1;
+            if (people.Count>1)
+            {
+                currentID = people.OrderByDescending(x => x.Id).First().Id + 1;
+            }
+            model.Id = currentID;
+            people.Add(model);
+            people.SaveToPeopleFile(PeopleFile);
+            return model;
         }
 
         public PrizeModel CreatePrize(PrizeModel model)

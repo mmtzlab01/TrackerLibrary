@@ -74,6 +74,17 @@ namespace TrackerLibrary.DataAccess.TextConnector
             }
             File.WriteAllLines(filename.FullFilePath(), lines);
         }
+        public static void SaveToPeopleFile(this List<PersonModel> models, string filename)
+        {
+            List<string> lines = new List<string>();
+
+            foreach (PersonModel p in models)
+            {
+                lines.Add($"{ p.Id }, { p.FirstName }, { p.LastName }, { p.EmailAddress }, { p.CellPhoneNumber }");
+            }
+
+            File.WriteAllLines(filename.FullFilePath(), lines);
+        }
 
     }
 }
