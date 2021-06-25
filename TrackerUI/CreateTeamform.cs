@@ -53,7 +53,12 @@ namespace TrackerUI
                 p.EmailAddress = EmailValue.Text;
                 p.CellPhoneNumber = PhoneValue.Text;
 
-                Globalconfig.Connection.CreatePerson(p);
+                p = Globalconfig.Connection.CreatePerson(p);
+
+                selectedTeamMembers.Add(p);
+                //SelectTeamDropdown.Refresh();
+                //TeamMembersListbox.Refresh();
+                WireUpLists();
 
                 Clearform();
 
@@ -112,7 +117,8 @@ namespace TrackerUI
 
         private void DeleteSelectedMemberButton_Click(object sender, EventArgs e)
         {
-            PersonModel p = (PersonModel)SelectTeamDropdown.SelectedItem;
+            PersonModel p = (PersonModel)TeamMembersListbox.SelectedItem;
+
 
             if (p != null)
             {
