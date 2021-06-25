@@ -115,6 +115,7 @@ namespace TrackerUI
             this.AddMemberbutton.TabIndex = 14;
             this.AddMemberbutton.Text = "Add Member";
             this.AddMemberbutton.UseVisualStyleBackColor = true;
+            this.AddMemberbutton.Click += new System.EventHandler(this.AddMemberbutton_Click);
             // 
             // AddNewMemberGroupbox
             // 
@@ -248,6 +249,7 @@ namespace TrackerUI
             this.DeleteSelectedMemberButton.TabIndex = 26;
             this.DeleteSelectedMemberButton.Text = "Delete Selected";
             this.DeleteSelectedMemberButton.UseVisualStyleBackColor = true;
+            this.DeleteSelectedMemberButton.Click += new System.EventHandler(this.DeleteSelectedMemberButton_Click);
             // 
             // CreateTeamButton
             // 
